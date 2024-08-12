@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
+import BoardList from "./components/board/BoardList";
+import Home from "./components/Home";
+import router from "../src/components/router/index";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className={"App"}>
+          <RouterProvider router={router} />
+          {/*<BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<Home/>}/>
+                  <Route path="/board/list" element={<BoardList/>}/>
+              </Routes>
+          </BrowserRouter>*/}
+      </div>
+
   );
 }
 
